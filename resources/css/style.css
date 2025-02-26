@@ -246,6 +246,10 @@ td.mismatch {
 
 
 @media (max-width: 500px) {
+    nav img {
+        height: 5vh;
+    }
+    
     .main-area {
         flex-direction: column;
 

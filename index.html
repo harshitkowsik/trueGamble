@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trueGamble</title>
+    <link rel="icon" type="image/png" href="./resources/icons/tgfavicon.png">
+    <link rel="stylesheet" href="./resources/css/style.css">
+    <meta name="description" content="Step into the ultimate thrill of real gambling meets worry-free fun. Enjoy the authentic rush of placing bets and winning big, all without the risk of losing money">
+    <meta name="keywords" content="gambling, truegamble, online games">
+    <meta property="og:title" content="trueGamble">
+    <meta property="og:description" content="Step into the ultimate thrill of real gambling meets worry-free fun. Enjoy the authentic rush of placing bets and winning big, all without the risk of losing money">
+    <meta property="og:image" content="./resources/images/og-image.jpg">
+    <meta property="og:url" content="https://trueGamble.vercel.app">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="trueGamble">
+    <meta name="twitter:description" content="Step into the ultimate thrill of real gambling meets worry-free fun. Enjoy the authentic rush of placing bets and winning big, all without the risk of losing money">
+    <meta name="twitter:image" content="./resources/images/logo_nobg.png">
+    <script src="resources/js/script.js" defer></script>
+    <meta name="author" content="trueGamble">
+    <meta name="copyright" content="2025 trueGamble">
+    <meta name="robots" content="index, follow">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html" title="Website Logo">
+                <img src="./resources/images/logo_nobg.png" alt="trueGamble Logo">
+            </a>
+            <div id="toggle-btn" title="Dark / Bright Mode" aria-label="Toggle Dark Mode">
+                <img src="./resources/icons/bright.svg" id="bright" alt="Bright Mode Icon">
+                <img src="./resources/icons/dark.svg" id="dark" alt="Dark Mode Icon">
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="main-area">
+            <div class="main-area-left">
+                <div id="balance">
+                    <p>Your Balance</p>
+                    <div id="balance-box" aria-live="polite" title="Your Balance">
+                        100000
+                    </div>
+                </div>
+
+                <form id="betForm">
+                    <label for="betAmount">Bet Amount</label>
+                    <input type="number" id="betAmount" min="100" max="100000" placeholder="eg. 1000" required aria-label="Enter Bet Amount">
+                    <label for="mines">Mines</label>
+                    <input type="number" id="mines" min="1" max="5" placeholder="eg. 2" required aria-label="Select Mines">
+                    <button id="betButton" type="submit" aria-label="Place Bet">Bet</button>
+                </form>
+
+                <div id="betInfo">
+                    <p>Profit</p>
+                    <div id="profit-box" aria-live="polite">
+                        0
+                    </div>
+                    <button id="cashout" onclick="gameOver();" aria-label="Cash Out">Cashout</button>
+                </div>
+                <br>
+            </div>
+
+            <div class="main-area-right">
+                <table id="gameTable">
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <div id="gameOverMessage">
+            <div id="overAlert">
+                <p>Game Over</p>
+                <img src="resources/images/logo_nobg.png" alt="trueGamble Logo">
+            </div>
+        </div>
+    </main>
+</body>
+</html>

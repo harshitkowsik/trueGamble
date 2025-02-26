@@ -1,0 +1,318 @@
+:root {
+    --tgBackground: #ffffff;
+    --tgGreen: #00ff00;
+    --tgBorder: #000000;
+    --tgTileColor: #212121;
+}
+
+* {
+    transition: all ease 0.3s;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    margin: 0px;
+    background-color: var(--tgBackground);
+}
+
+nav {
+    width: auto;
+    height: 9vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img {
+    height: 7vh;
+    margin: 20px;
+}
+#toggle-btn {
+    filter: invert(0);
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%; /* Changed to 50% for a perfect circle */
+    margin-right: 20px;
+    transition: all ease 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#bright{
+width: 20px;
+}
+
+#dark{
+    display: none;
+    width: 20px;
+}
+
+#toggle-btn:hover {
+    transform: scale(110%);
+}
+
+#toggle-btn:active {
+    transform: scale(100%);
+}
+
+.main-area {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 9vh);
+    gap: 20px;
+
+}
+
+.main-area-left {
+    background-color: #f0f4f9;
+    width: calc(30%);
+    margin: 20px 0px 20px 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    align-items: center;
+    border: 1px solid var(--tgBorder);
+}
+
+#balance {
+    width: 90%;
+    margin: 15px 0px 0px 0px;
+}
+
+#balance p {
+    margin: 5px 0px 5px 0px;
+}
+
+#balance-box {
+    height: 15px;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+
+}
+
+#betInfo {
+    display: none;
+    width: 90%;
+}
+
+#betInfo p {
+    margin: 10px 0px 5px 0px;
+}
+
+
+#profit-box {
+    height: 15px;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+
+}
+
+#betForm {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input {
+    width: calc(100% - 21px);
+    height: 15px;
+    border: 1px solid var(--tgBorder);
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 10px;
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    margin-top: 20px;
+    width: 100%;
+    height: 35px;
+    background-color: var(--tgGreen);
+    border: 1px solid var(--tgBorder);
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all ease 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+button:active {
+    transform: scale(98%);
+}
+
+.main-area-right {
+    width: calc(70%);
+    margin: 20px 20px 20px 0px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--tgBorder);
+    overflow: auto;
+}
+
+table {
+    border-spacing: 10px;
+    
+}
+
+td {
+    height: 80px;
+    width: 80px;
+    background-color: var(--tgTileColor);
+    font-size: 0px;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0px 3px #4b4b4b;
+}
+
+td:hover {
+    transform: scale(105%);
+
+}
+
+td:active {
+    transform: scale(100%);
+
+}
+
+
+td.match {
+    background-color: var(--tgGreen);
+}
+
+td.mismatch {
+    background-color: red;
+}
+
+#gameOverMessage {
+    display: none;
+    position: fixed;
+    height: 91vh;
+    width: 69%;
+    right: 0px;
+    top: 9vh;
+    margin: 0px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+
+}
+
+#overAlert {
+    background-color: white;
+    height: 125px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+#overAlert img {
+    width: 50%;
+}
+
+#overAlert p {
+    color: red;
+    font-weight: bold;
+    font-size: 32px;
+    margin: 0px;
+}
+
+
+
+@media (max-width: 500px) {
+    .main-area {
+        flex-direction: column;
+
+    }
+
+    .main-area-left {
+        width: calc(100% - 40px);
+        height: 40%;
+        margin: 10px 20px 0px 20px;
+        border-radius: 10px;
+    }
+
+    .main-area-right {
+        width: calc(100% - 40px);
+        height: 60%;
+        margin: 0px 20px 20px 20px;
+        border-radius: 10px;
+    }
+
+    td {
+        height: 60px;
+        width: 60px;
+    }
+
+    button {
+        padding: 10px;
+    }
+
+    input {
+        height: 10px;
+    }
+
+    #balance-box {
+        height: 10px;
+    }
+
+    table {
+        border-spacing: 5px;
+    }
+
+    td {
+        box-shadow: 0px 2px 0px #4b4b4b;
+
+    }
+
+    #gameOverMessage {
+        display: none;
+        height:55vh;
+        width: 100%;    
+        border-radius: 10px;
+        top: 45vh;
+    }
+
+    #overAlert {
+        background-color: white;
+        height: 100px;
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 20px;
+        
+    }
+
+    #overAlert p{
+        font-size: 25px;
+    }
+
+}

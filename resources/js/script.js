@@ -115,6 +115,11 @@ document.addEventListener('DOMContentLoaded', function () {
         let target = event.target;
         if (target.tagName !== 'TD') return; // Ensure target is a TD element
 
+        // Check if the cell has already been clicked
+        if (target.classList.contains('match') || target.classList.contains('mismatch')) {
+            return;
+        } // If already clicked, do nothing
+
         const cellNumber = parseInt(target.textContent);
         if (randomNumbers.includes(cellNumber)) {
             target.classList.add('mismatch'); // Turn red on mine click
@@ -122,7 +127,6 @@ document.addEventListener('DOMContentLoaded', function () {
             gameOver(); // Call gameOver function
         } else {
             target.classList.add('match'); // Turn green on safe click
-            target.style.pointerEvents = 'none'; // Disable clicks on green cells
             let profitPerClick = betAmount * mines;
             currentAmount += profitPerClick; // Double amount if safe
             let profitElement = document.getElementById('profit-box');

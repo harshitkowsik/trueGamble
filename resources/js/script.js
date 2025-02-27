@@ -96,7 +96,6 @@ document.addEventListener('DOMContentLoaded', function () {
         userBalance -= betAmount;
         document.getElementById('balance-box').innerText = `${userBalance}`;
 
-        currentAmount = betAmount;
         randomNumbers = generateRandomNumbers(mines, 1, 25);
 
         // Reset table cells
@@ -122,6 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
             gameOver(); // Call gameOver function
         } else {
             target.classList.add('match'); // Turn green on safe click
+            target.style.pointerEvents = 'none'; // Disable clicks on green cells
             let profitPerClick = betAmount * mines;
             currentAmount += profitPerClick; // Double amount if safe
             let profitElement = document.getElementById('profit-box');

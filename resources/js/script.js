@@ -95,7 +95,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // Deduct bet amount from user's balance
         userBalance -= betAmount;
         document.getElementById('balance-box').innerText = `${userBalance}`;
-
+        
+        currentAmount = betAmount;
         randomNumbers = generateRandomNumbers(mines, 1, 25);
 
         // Reset table cells
@@ -125,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
             let profitPerClick = betAmount * mines;
             currentAmount += profitPerClick; // Double amount if safe
             let profitElement = document.getElementById('profit-box');
-            profitElement.innerText = `${currentAmount}`;
+            profitElement.innerText = `${currentAmount - betAmount}`;
         }
     });
 

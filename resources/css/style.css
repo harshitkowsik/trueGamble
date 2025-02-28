@@ -244,7 +244,10 @@ td.mismatch {
     margin: 0px;
 }
 
-
+.game-info{
+    font-size: 12px;
+    width: 90%;
+}
 
 @media (max-width: 500px) {
     nav img {
@@ -320,4 +323,7 @@ td.mismatch {
         font-size: 25px;
     }
 
+    .game-info{
+    font-size: 10px;
+}
 }
